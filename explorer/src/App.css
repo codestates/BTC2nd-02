@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+  color: black;
+}
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: black;
+}
+a:active {
+  color: black;
+}
+.Nav {
+  text-align: left;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+.Logo {
+  margin: 1rem 0rem 0rem 1.5rem;
+  vertical-align: middle;
+}
+.logo {
+  width: 3rem;
+  vertical-align: middle;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+.menu {
+  margin: 0.5rem 1rem 0rem 2rem;
+  font-size: 1.5rem;
+  float: right;
+  vertical-align: middle;
+}
+
+.text {
+  padding-left: 0.3rem;
+  vertical-align: middle;
+}
+.searchbar {
+  display: flex;
+  justify-content: center;
+}
+.searchicon {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.title {
+  margin-top: 1rem;
+}
