@@ -47,7 +47,13 @@ a:active {
 .searchicon {
   margin-left: 5px;
   vertical-align: middle;
+  padding: 1rem;
 }
 .title {
   margin-top: 1rem;
+}
+.inputtxt {
+  padding: 1rem 2rem;
+  width: 10rem;
+  text-align: center;
 }

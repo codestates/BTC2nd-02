@@ -7,15 +7,23 @@ import Blockpage from "./pages/blockpage.js";
 import Txpage from "./pages/txpage.js";
 
 function App() {
+<<<<<<< HEAD
   
+=======
+>>>>>>> main
   return (
     <div className="App">
       <BrowserRouter>
         <Nav></Nav>
         <Routes>
           <Route default path="/" element={<Main />} />
+<<<<<<< HEAD
           <Route default path="/block" element={<Blockpage />} />
           <Route default path="/tx" element={<Txpage />} />
+=======
+          <Route path="/block" element={<Blockpage />} />
+          <Route path="/tx" element={<Txpage />} />
+>>>>>>> main
         </Routes>
       </BrowserRouter>
     </div>
