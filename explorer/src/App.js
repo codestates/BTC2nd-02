@@ -7,6 +7,7 @@ import Blockpage from "./pages/blockpage.js";
 import Txpage from "./pages/txpage.js";
 
 function App() {
+  
   return (
     <div className="App">
       <BrowserRouter>
