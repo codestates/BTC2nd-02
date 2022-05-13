@@ -1,0 +1,16 @@
+#top-logo {
+    animation-name: scaling;
+    animation-duration: 800ms;
+    animation-direction: alternate;
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.0;
+    }
+    100% {
+        transform: scale(1.0);
+        opacity: 1.0;
+    }
+}

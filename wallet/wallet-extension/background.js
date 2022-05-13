@@ -1,6 +1,11 @@
-let color = "#3aa757";
+fetch('http://localhost:3000/wallet/newWallet', {
+      method: 'POST',
+    })
+      .then(response => {
+        
+        if (response) {
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color });
-  console.log("Default background color set to %cgreen", `color: ${color}`);
-});
+          console.log("newWallet connect success")
+
+        }
+      })
