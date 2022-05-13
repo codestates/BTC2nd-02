@@ -9,23 +9,11 @@ function Nav() {
     <div>
       <div className="Nav">
         <span className="Logo">
-          <img className="logo" src={KLAETLogo} alt="logo"></img>
           <span className="title">
             <Link to="/" style={{ textDecoration: "none" }}>
               KLAET
             </Link>
           </span>
-        </span>
-
-        <span className="menu">
-          <Link to="/block" style={{ textDecoration: "none" }}>
-            <span className="text">BLOCKS</span>
-          </Link>
-        </span>
-        <span className="menu">
-          <Link to="/tx" style={{ textDecoration: "none" }}>
-            <span className="text">TRANSACTION</span>
-          </Link>
         </span>
       </div>
       <hr />

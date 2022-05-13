@@ -21,26 +21,10 @@ const Txpage = () => {
     );
     console.log(result);
   };
-  // const getHis = async () => {
-  //   await axios
-  //     .get("https://th-api.klaytnapi.com/v2/transfer/", {
-  //       "x-chain-id": "1001",
-  //       size: 100,
-  //       presets: 286,
-  //     })
-  //     .then((res) => {
-  //       setTokenArr(res);
-  //       console.log(tokenArr);
-  //     })
-  //     .catch((err) => {
-  //       console.log("!!err!!" + err);
-  //     });
-  // };
   return (
     <div>
       <div>트랜잭션 페이지</div>
       <button onClick={blockNumber}>트랜잭션</button>
-      {/* <button onClick={getHis}>히스토리</button> */}
     </div>
   );
 };

@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav></Nav>
         <Routes>
           <Route default path="/" element={<Main />} />
           <Route path="/block" element={<Blockpage />} />
