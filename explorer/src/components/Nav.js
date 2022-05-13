@@ -9,14 +9,27 @@ function Nav() {
     <div>
       <div className="Nav">
         <span className="Logo">
-          <span className="title">
-            <Link to="/" style={{ textDecoration: "none" }}>
+          <span>
+            <Link to="/" style={{ textDecoration: "none" }} className="title">
               KLAET
+            </Link>
+          </span>
+          <span>
+            <Link to="/tx" style={{ textDecoration: "none" }} className="menu">
+              TxHash
+            </Link>
+          </span>
+          <span>
+            <Link
+              to="/account"
+              style={{ textDecoration: "none" }}
+              className="menu"
+            >
+              Account Address
             </Link>
           </span>
         </span>
       </div>
-      <hr />
     </div>
   );
 }

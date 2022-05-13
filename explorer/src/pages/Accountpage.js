@@ -10,55 +10,58 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
-
 const mdTheme = createTheme();
 
 export default function DashboardContent() {
+  const [open, setOpen] = React.useState(true);
+  const toggleDrawer = () => {
+    setOpen(!open);
+  };
   const accessKeyId = "KASKREJNW0ITLFCGVX5H5HSL";
   const secretAccessKey = "70TItBV28va0q8rGGwuu3vjmHX0M3PrErlmnsG54";
   const chainId = 1001;
-  const [txArr, setTxArr] = useState([]);
   const caver = new CaverExtKAS();
   caver.initKASAPI(chainId, accessKeyId, secretAccessKey);
 
-  const [txHash, setTxHash] = useState("");
-  let isFindT = 0;
+  const [account, setAccount] = useState("");
+  const [accountHis, setAccountHis] = useState([]);
+  let isFindA = 0;
 
-  const onChangeTxHash = (e) => {
-    setTxHash(e.target.value);
+  const onChangeAccount = (e) => {
+    setAccount(e.target.value);
   };
 
-  const findTxHash = async () => {
-    const result = await caver.kas.tokenHistory.getTransferHistoryByTxHash(
-      txHash
+  const findAccount = async () => {
+    const result = await caver.kas.tokenHistory.getTransferHistoryByAccount(
+      account
     );
-    console.log(result.items);
-    setTxArr(result.items);
+    setAccountHis(result.items);
+    console.log(accountHis);
   };
 
   useEffect(() => {
-    isFindT = isFindT + 1;
-    if (isFindT > 1) {
-      setTxArr(txArr);
-      console.log(txArr);
+    isFindA = isFindA + 1;
+    if (isFindA > 1) {
+      setAccountHis(accountHis);
+      console.log(accountHis);
     }
-  }, [txArr]);
+  }, [accountHis]);
 
   return (
     <ThemeProvider theme={mdTheme}>
-      <div className="searchtitle">트랜잭션 해시 검색</div>
+      <div className="searchtitle">어카운트 정보 검색</div>
       <div className="searchbar">
         <input
           type="text"
-          onChange={onChangeTxHash}
-          placeholder="트랜잭션 해시를 입력하세요."
+          onChange={onChangeAccount}
+          placeholder="계정 주소를 입력하세요."
           className="inputtxt"
         ></input>
         <BsSearch
           size="25"
           className="searchicon"
           type="button"
-          onClick={findTxHash}
+          onClick={findAccount}
         />
       </div>
       <Grid container spacing={3}>
@@ -70,13 +73,13 @@ export default function DashboardContent() {
                 <TableCell>Transfer Type</TableCell>
                 <TableCell>To</TableCell>
                 <TableCell>From</TableCell>
-                <TableCell>Tx Hash</TableCell>
+                <TableCell align="right">Tx Hash</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {txArr.map((a) => (
-                <TableRow key={a.blockNumber}>
-                  <TableCell>{a.blockNumber}</TableCell>
+              {accountHis.map((a) => (
+                <TableRow key={a}>
+                  <TableCell align="right">{a.blockNumber}</TableCell>
                   <TableCell>{a.transferType}</TableCell>
                   <TableCell>{a.to}</TableCell>
                   <TableCell>{a.from}</TableCell>
@@ -89,4 +92,8 @@ export default function DashboardContent() {
       </Grid>
     </ThemeProvider>
   );
+}
+
+function Dashboard() {
+  return <DashboardContent />;
 }
