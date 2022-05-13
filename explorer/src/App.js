@@ -10,11 +10,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav></Nav>
         <Routes>
           <Route default path="/" element={<Main />} />
-          <Route default path="/block" element={<Blockpage />} />
-          <Route default path="/tx" element={<Txpage />} />
+          <Route path="/block" element={<Blockpage />} />
+          <Route path="/tx" element={<Txpage />} />
         </Routes>
       </BrowserRouter>
     </div>
